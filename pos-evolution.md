@@ -233,7 +233,7 @@ A vote message consists of four fields: two blocks (called in the context of Cas
 
 Once a vote $⟨v_i, a, b, h(a), h(b)⟩$ has been cast by $\frac{2}{3}$ of validators and the checkpoint $a$ is justified (and the notion of *supermajority link* is defined as an ordered pair $(a,b),$ such that $\frac{2}{3}$ of validators have broadcast votes with source $a$ and target $b$), the checkpoint $b$ becomes justified. Finally, the checkpoint $b$ is finalized if $b$ is justified and at least $\frac{2}{3}$ of validators broadcast a vote $⟨v_i, b, c, h(b), h(c)⟩$, with $h(c)=h(b)+1.$ Observe that votes can skip checkpoints, i.e., given a vote $⟨v_i, a, b, h(a), h(b)⟩$, it is permitted to have h(b) > h(a) + 1.
 
-Let $⟨v_i, s_1, t_1, h(s_1), h(t_1)⟩$ and $⟨v, s_2, t_2, h(s_2), h(t_2)⟩$ be two voted cast by validator $v_i$. Then, it must not be that either:
+Let $⟨v_i, s_1, t_1, h(s_1), h(t_1)⟩$ and $⟨v_i, s_2, t_2, h(s_2), h(t_2)⟩$ be two voted cast by validator $v_i$. Then, it must not be that either:
 
 * $h(t_1) = h(t_2)$, i.e., a validator must not publish two distinct votes for the same target height; or
 * $h(s_1) < h(s_2) < h(t_2) < h(t_1)$, i.e., a validator must not vote within the span of its other votes.
